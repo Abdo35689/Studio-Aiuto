@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyAI Helper – Contatti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <header class="main-header">
+    <div class="logo">StudyAI<span>Helper</span></div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="study-tools.html">Strumenti</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contatti</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button data-lang="it" class="lang-btn active">IT</button>
+      <button data-lang="en" class="lang-btn">EN</button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-header">
+      <h1 data-i18n="contact_title_it">
+        Contattaci o inviaci un feedback
+      </h1>
+      <p data-i18n="contact_subtitle_it">
+        Hai un’idea, un bug da segnalare o una nuova funzione da proporre? Scrivici in pochi secondi.
+      </p>
+    </section>
+
+    <section class="page-grid">
+      <article class="page-card full">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name" data-i18n="contact_name_label_it">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Es. Mario Rossi" />
+              <p class="form-error" id="nameError"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="email" data-i18n="contact_email_label_it">Email</label>
+              <input type="email" id="email" name="email" placeholder="tuoindirizzo@email.com" />
+              <p class="form-error" id="emailError"></p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="topicFeedback" data-i18n="contact_topic_label_it">Argomento</label>
+              <input type="text" id="topicFeedback" name="topicFeedback"
+                     placeholder="Es. Funzione mappa concettuale, bug schemi..." />
+              <p class="form-error" id="topicError"></p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="message" data-i18n="contact_message_label_it">Messaggio</label>
+              <textarea id="message" name="message" rows="5"
+                        placeholder="Descrivi la tua richiesta o il problema in modo dettagliato..."></textarea>
+              <p class="form-error" id="messageError"></p>
+            </div>
+          </div>
+
+          <div class="form-row form-actions">
+            <button type="submit" class="btn primary" data-i18n="contact_submit_it">
+              Invia messaggio
+            </button>
+            <p class="form-success" id="formSuccess"></p>
+          </div>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
