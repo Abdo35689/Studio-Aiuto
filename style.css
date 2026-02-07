@@ -1,0 +1,205 @@
+:root {
+  --bg-main: #050816;
+  --bg-elevated: #0b1120;
+  --accent: #6366f1;
+  --accent-soft: rgba(99, 102, 241, 0.16);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-subtle: #1f2937;
+  --radius-lg: 14px;
+  --radius-full: 999px;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+}
+
+/* Reset minimale */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body.dark {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+  color: var(--text-main);
+}
+
+/* Layout */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 6vw;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(to bottom, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.35));
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 1.1rem;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.nav a:hover {
+  background-color: rgba(148, 163, 184, 0.16);
+  color: var(--text-main);
+}
+
+.nav a.active {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Language switcher */
+.lang-switch {
+  display: flex;
+  gap: 0.4rem;
+  background-color: rgba(15, 23, 42, 0.85);
+  padding: 0.2rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-btn.active {
+  background-color: var(--accent);
+  color: #f9fafb;
+}
+
+/* Hero */
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 6vw 4rem;
+}
+
+.hero-content {
+  max-width: 720px;
+  padding: 2.5rem 2.25rem;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.21), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.16), transparent 65%),
+              linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
+  box-shadow: var(--shadow-soft);
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.9rem;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 34rem;
+  line-height: 1.5;
+  margin-bottom: 1.6rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.3rem;
+  font-size: 0.9rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.18s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #f9fafb;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.6);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.9);
+}
+
+.btn.ghost {
+  background-color: rgba(15, 23, 42, 0.9);
+  color: var(--text-main);
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+.btn.ghost:hover {
+  background-color: rgba(30, 64, 175, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-header {
+    padding-inline: 1.1rem;
+    gap: 0.75rem;
+  }
+
+  .nav {
+    display: none; /* versione mobile semplice per ora */
+  }
+
+  .hero {
+    padding-inline: 1.3rem;
+  }
+
+  .hero-content {
+    padding: 1.9rem 1.4rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
