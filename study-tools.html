@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyAI Helper – Strumenti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <!-- Header riusato (stesso di index.html) -->
+  <header class="main-header">
+    <div class="logo">StudyAI<span>Helper</span></div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="study-tools.html" class="active">Strumenti</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contatti</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button data-lang="it" class="lang-btn active">IT</button>
+      <button data-lang="en" class="lang-btn">EN</button>
+    </div>
+  </header>
+
+  <main class="tools-layout">
+    <!-- Sidebar -->
+    <aside class="tools-sidebar">
+      <h2 class="sidebar-title" data-i18n="sidebar_title_it">
+        Workspace di studio
+      </h2>
+
+      <div class="sidebar-group">
+        <label class="sidebar-label" for="subject-select" data-i18n="subject_label_it">
+          Materia
+        </label>
+        <select id="subject-select" class="sidebar-select">
+          <option value="generic">Generale</option>
+          <option value="history">Storia</option>
+          <option value="math">Matematica</option>
+          <option value="science">Scienze</option>
+          <option value="law">Diritto</option>
+          <option value="language">Lingue</option>
+        </select>
+      </div>
+
+      <div class="sidebar-group">
+        <label class="sidebar-label" for="tone-select" data-i18n="tone_label_it">
+          Tono spiegazione
+        </label>
+        <select id="tone-select" class="sidebar-select">
+          <option value="simple">Semplice</option>
+          <option value="standard">Standard</option>
+          <option value="exam">Stile interrogazione</option>
+        </select>
+      </div>
+
+      <p class="sidebar-hint" data-i18n="sidebar_hint_it">
+        Suggerimento: scrivi l’argomento come lo chiederebbe un professore,
+        non solo una parola singola.
+      </p>
+    </aside>
+
+    <!-- Area principale -->
+    <section class="tools-main">
+      <header class="tools-header">
+        <h1 data-i18n="tools_title_it">
+          Strumenti di studio con AI
+        </h1>
+        <p class="tools-subtitle" data-i18n="tools_subtitle_it">
+          Inserisci un argomento e genera schemi, mappe concettuali e spiegazioni sintetiche.
+        </p>
+
+        <div class="tools-tabs" role="tablist">
+          <button class="tools-tab active" data-tab="outline" role="tab">
+            <span data-i18n="tab_outline_it">Schema</span>
+          </button>
+          <button class="tools-tab" data-tab="mindmap" role="tab">
+            <span data-i18n="tab_mindmap_it">Mappa</span>
+          </button>
+          <button class="tools-tab" data-tab="explain" role="tab">
+            <span data-i18n="tab_explain_it">Cerca & Spiega</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="tools-input">
+        <label for="topic-input" class="input-label" data-i18n="topic_label_it">
+          Argomento di studio
+        </label>
+        <textarea
+          id="topic-input"
+          class="topic-textarea"
+          rows="3"
+          placeholder="Es. Cause e conseguenze della Rivoluzione francese..."
+        ></textarea>
+
+        <div class="tools-actions">
+          <button id="generate-btn" class="btn primary" data-i18n="generate_btn_it">
+            Genera contenuto
+          </button>
+          <button id="clear-btn" class="btn ghost" data-i18n="clear_btn_it">
+            Svuota
+          </button>
+        </div>
+      </div>
+
+      <!-- Output -->
+      <section class="tools-output">
+        <div id="outline-panel" class="output-panel active" data-panel="outline">
+          <!-- Schema generato -->
+        </div>
+
+        <div id="mindmap-panel" class="output-panel" data-panel="mindmap">
+          <!-- Mappa generata -->
+        </div>
+
+        <div id="explain-panel" class="output-panel" data-panel="explain">
+          <!-- Spiegazione generata -->
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
